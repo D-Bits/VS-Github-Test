@@ -15,7 +15,7 @@ namespace BkReviewGitTest.Controllers
             //var bks = (from b in db.Books
                       //select b).ToList();
 
-            return View(); 
+            return View(db.Books.ToList()); 
         }
 
         public ActionResult About() 
