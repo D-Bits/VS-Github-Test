@@ -12,10 +12,10 @@ namespace BkReviewGitTest.Controllers
         public ActionResult Index() // Controller for the Index page
         {
             BookReviewDbEntities db = new BookReviewDbEntities();
-            var bks = (from b in db.Books
-                      select b).ToList();
+            //var bks = (from b in db.Books
+                      //select b).ToList();
 
-            return View(bks); 
+            return View(); 
         }
 
         public ActionResult About() 

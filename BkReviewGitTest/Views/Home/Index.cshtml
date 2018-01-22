@@ -1,11 +1,14 @@
-﻿@{
+﻿
+@model IEnumerable<BkReviewGitTest.Models.Book> 
+
+@{
     ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
     <h1>Book Reviews</h1>
     <p class="lead">A Page for book bullshit, and stuff.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    
 </div>
 
 <div class="row">
@@ -28,4 +31,24 @@
         <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
+</div>
+
+<div>
+    <table class="table">
+        <tr>
+            <th>@Html.DisplayNameFor(model=>model.BookTitle)</th>
+            <th>@Html.DisplayNameFor(model=>model.BookISBN)</th>
+            <th>@Html.DisplayNameFor(model=>model.BookEntryDate)</th>
+        </tr>
+
+        @foreach(var item in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(model => item.BookTitle)</td>
+            <td>@Html.DisplayFor(model => item.BookISBN)</td>
+            <td>@Html.DisplayFor(model => item.BookEntryDate)</td>
+        </tr>
+        }
+
+    </table>
 </div>
